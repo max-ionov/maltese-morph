@@ -1,0 +1,540 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#> .
+@prefix morph: <https://www.w3.org/community/ontolex/wiki/Morphology#> .
+
+@prefix roots: <https://mlrs.research.um.edu.mt/resources/gabra/roots/view/> .
+@prefix entries: <https://mlrs.research.um.edu.mt/resources/gabra/lexemes/view/> .
+
+@base <https://data.ionov.me/gabra/> .
+
+<consonants> a <CharacterClass> ;
+             rdfs:label "C" ;
+             rdfs:member "ċ", "d", "n", "r", "s", "t", "x", "ż", 
+						 "z", "b", "f", "ġ", "g", "għ", "h", "ħ",
+						 "j", "k", "l", "m", "p", "q", "v", "w" .
+
+<vowels> a <CharacterClass> ;
+     rdfs:label "V" ;
+     rdfs:member "a", "e", "i", "o", "u" .
+
+# Paradigm definitions
+
+<kiteb_paradigm>  a morph:Paradigm ;
+          rdfs:label "Regular inflection of strong verbs like kiteb"@en .
+
+<ghamel_paradigm> a morph:Paradigm ;
+          rdfs:label "Regular inflection of strong verbs like ghamel"@en .
+
+<telaq_paradigm>  a morph:Paradigm ;
+          rdfs:label "Regular inflection of strong verbs like telaq"@en .
+
+# Affixes
+
+<affix_0_perf_3sg_m>  a lexinfo:ZeroMorph ;
+                      rdfs:label "-∅"@mlt ;
+                      morph:grammaticalMeaning [
+                        a morph:GrammaticalMeaning ;
+                        lexinfo:aspect lexinfo:perfective ;
+                        lexinfo:person lexinfo:thirdPerson ;
+                        lexinfo:number lexinfo:singular ;
+                        lexinfo:gender lexinfo:masculine ;
+                      ] .
+
+<suffix_t_perf_1sg> a ontolex:Affix ;
+                    rdfs:label "-t"@mlt ;
+                    morph:grammaticalMeaning [
+                        a morph:GrammaticalMeaning ;
+                        lexinfo:aspect lexinfo:perfective ;
+                        lexinfo:person lexinfo:firstPerson ;
+                        lexinfo:number lexinfo:singular ;
+                        # lexinfo:gender lexinfo:masculine, lexinfo:feminine ;
+                      ] .
+
+<suffix_t_perf_2sg> a ontolex:Affix ;
+                    rdfs:label "-t"@mlt ;
+                    morph:grammaticalMeaning [
+                        a morph:GrammaticalMeaning ;
+                        lexinfo:aspect lexinfo:perfective ;
+                        lexinfo:person lexinfo:secondPerson ;
+                        lexinfo:number lexinfo:singular ;
+                        # lexinfo:gender lexinfo:masculine, lexinfo:feminine ;
+                      ] .
+
+<suffix_et_perf_3sg_f>  a ontolex:Affix ;
+                        rdfs:label "-et"@mlt ;
+                        morph:grammaticalMeaning [
+                          a morph:GrammaticalMeaning ;
+                          lexinfo:aspect lexinfo:perfective ;
+                          lexinfo:person lexinfo:thirdPerson ;
+                          lexinfo:number lexinfo:singular ;
+                          lexinfo:gender lexinfo:feminine ;
+                        ] .
+
+<suffix_na_perf_1pl>  a ontolex:Affix ;
+                      rdfs:label "-na"@mlt ;
+                      morph:grammaticalMeaning [
+                        a morph:GrammaticalMeaning ;
+                        lexinfo:aspect lexinfo:perfective ;
+                        lexinfo:person lexinfo:firstPerson ;
+                        lexinfo:number lexinfo:plural ;
+                      ] .
+
+<suffix_tu_perf_2pl>  a ontolex:Affix ;
+                      rdfs:label "-tu"@mlt ;
+                      morph:grammaticalMeaning [
+                        a morph:GrammaticalMeaning ;
+                        lexinfo:aspect lexinfo:perfective ;
+                        lexinfo:person lexinfo:secondPerson ;
+                        lexinfo:number lexinfo:plural ;
+                      ] .
+
+<suffix_u_perf_3pl>   a ontolex:Affix ;
+                      rdfs:label "-u"@mlt ;
+                      morph:grammaticalMeaning [
+                        a morph:GrammaticalMeaning ;
+                        lexinfo:aspect lexinfo:perfective ;
+                        lexinfo:person lexinfo:thirdPerson ;
+                        lexinfo:number lexinfo:plural ;
+                      ] .
+
+<prefix_n_impf_1>     a ontolex:Affix ;
+                      rdfs:label "n-"@mlt ;
+                      morph:grammaticalMeaning [
+                        a morph:GrammaticalMeaning ;
+                        lexinfo:aspect lexinfo:imperfective ;
+                        lexinfo:person lexinfo:firstPerson ;
+                        # lexinfo:gender lexinfo:masculine, lexinfo:feminine ;
+                      ] .
+
+<prefix_t_impf_2>     a ontolex:Affix ;
+                      rdfs:label "t-"@mlt ;
+                      morph:grammaticalMeaning [
+                        a morph:GrammaticalMeaning ;
+                        lexinfo:aspect lexinfo:imperfective ;
+                        lexinfo:person lexinfo:secondPerson ;
+                        # lexinfo:gender lexinfo:masculine, lexinfo:feminine ;
+                      ] .
+
+# variant of <prefix_j_impf_3_m> used for plural
+<prefix_j_impf_3>     a ontolex:Affix ;
+                      rdfs:label "j-"@mlt ;
+                      morph:grammaticalMeaning [
+                        a morph:GrammaticalMeaning ;
+                        lexinfo:aspect lexinfo:imperfective ;
+                        lexinfo:person lexinfo:thirdPerson ;
+                      ] .
+
+<prefix_j_impf_3_m>   a ontolex:Affix ;
+                      rdfs:label "j-"@mlt ;
+                      morph:grammaticalMeaning [
+                        a morph:GrammaticalMeaning ;
+                        lexinfo:aspect lexinfo:imperfective ;
+                        lexinfo:person lexinfo:thirdPerson ;
+                        lexinfo:gender lexinfo:masculine ;
+                      ] .
+
+<prefix_t_impf_3_f>  a ontolex:Affix ;
+                      rdfs:label "n-"@mlt ;
+                      morph:grammaticalMeaning [
+                        a morph:GrammaticalMeaning ;
+                        lexinfo:aspect lexinfo:imperfective ;
+                        lexinfo:person lexinfo:thirdPerson ;
+                        lexinfo:gender lexinfo:feminine ;
+                      ] .
+
+<affix_0_impf_sg>   a lexinfo:ZeroMorph ;
+                      rdfs:label "-∅"@mlt ;
+                      morph:grammaticalMeaning [
+                        a morph:GrammaticalMeaning ;
+                        lexinfo:number lexinfo:singular ;
+                      ] .
+
+<suffix_u_impf_pl>  a ontolex:Affix ;
+                      rdfs:label "-u"@mlt ;
+                      morph:grammaticalMeaning [
+                        a morph:GrammaticalMeaning ;
+                        lexinfo:number lexinfo:plural ;
+                      ] .
+
+# Rule definitions
+
+<kiteb_perf_1sg>   a morph:InflectionRule ;
+          morph:paradigm <kiteb_paradigm> ;
+          morph:involves <suffix_t_perf_1sg> ;
+          morph:replacement [
+                        a morph:Replacement ;
+                        morph:source "(C)(V)(C)(V)(C)" ;
+                        morph:target "\\1\\3i\\5t" ;
+                      ] .
+
+<kiteb_perf_2sg>   a morph:InflectionRule ;
+          morph:paradigm <kiteb_paradigm> ;
+          morph:involves <suffix_t_perf_2sg> ;
+          morph:replacement [
+                        a morph:Replacement ;
+                        morph:source "(C)(V)(C)(V)(C)" ;
+                        morph:target "\\1\\3i\\5t" ;
+                      ] .
+
+# This is a dictionary form, so I do not think there should be a ZeroMorph inserted
+<kiteb_perf_3sg_m>   a morph:InflectionRule ;
+          morph:paradigm <kiteb_paradigm> ;
+          morph:involves <affix_0_perf_3sg_m> ;
+          morph:replacement [
+                        a morph:Replacement ;
+                        morph:source "(C)(V)(C)(V)(C)" ;
+                        morph:target "\\0" ;
+                      ] .
+
+<kiteb_perf_3sg_f>   a morph:InflectionRule ;
+          morph:paradigm <kiteb_paradigm> ;
+          morph:involves <suffix_et_perf_3sg_f> ;
+          morph:replacement [
+                        a morph:Replacement ;
+                        morph:source "(C)(V)(C)(V)(C)" ;
+                        morph:target "\\1\\2\\3\\5et" ;
+                      ] .
+
+<kiteb_perf_1pl>   a morph:InflectionRule ;
+          morph:paradigm <kiteb_paradigm> ;
+          morph:involves <suffix_na_perf_1pl> ;
+          morph:replacement [
+                        a morph:Replacement ;
+                        morph:source "(C)(V)(C)(V)(C)" ;
+                        morph:target "\\1\\3i\\5na" ;
+                      ] .
+
+<kiteb_perf_2pl>   a morph:InflectionRule ;
+          morph:paradigm <kiteb_paradigm> ;
+          morph:involves <suffix_tu_perf_2pl> ;
+          morph:replacement [
+                        a morph:Replacement ;
+                        morph:source "(C)(V)(C)(V)(C)" ;
+                        morph:target "\\1\\3i\\5tu" ;
+                      ] .
+
+<kiteb_perf_3pl>   a morph:InflectionRule ;
+          morph:paradigm <kiteb_paradigm> ;
+          morph:involves <suffix_u_perf_3pl> ;
+          morph:replacement [
+                        a morph:Replacement ;
+                        morph:source "(C)(V)(C)(V)(C)" ;
+                        morph:target "\\1\\2\\3\\5u" ;
+                      ] .
+
+<kiteb_impf_1sg>   a morph:InflectionRule ;
+          morph:paradigm <kiteb_paradigm> ;
+          morph:involves <prefix_n_impf_1>, <affix_0_impf_sg> ;
+          morph:replacement [
+                        a morph:Replacement ;
+                        morph:source "(C)(V)(C)(V)(C)" ;
+                        morph:target "ni\\1\\3\\4\\5" ;
+                      ] .
+
+<kiteb_impf_2sg>   a morph:InflectionRule ;
+          morph:paradigm <kiteb_paradigm> ;
+          morph:involves <prefix_t_impf_2>, <affix_0_impf_sg> ;
+          morph:replacement [
+                        a morph:Replacement ;
+                        morph:source "(C)(V)(C)(V)(C)" ;
+                        morph:target "ti\\1\\3\\4\\5" ;
+                      ] .
+
+<kiteb_impf_3sg_m>   a morph:InflectionRule ;
+          morph:paradigm <kiteb_paradigm> ;
+          morph:involves <prefix_j_impf_3_m>, <affix_0_impf_sg> ;
+          morph:replacement [
+                        a morph:Replacement ;
+                        morph:source "(C)(V)(C)(V)(C)" ;
+                        morph:target "ji\\1\\3\\4\\5" ;
+                      ] .
+
+<kiteb_impf_3sg_f>   a morph:InflectionRule ;
+          morph:paradigm <kiteb_paradigm> ;
+          morph:involves <prefix_t_impf_3_f>, <affix_0_impf_sg> ;
+          morph:replacement [
+                        a morph:Replacement ;
+                        morph:source "(C)(V)(C)(V)(C)" ;
+                        morph:target "ti\\1\\3\\4\\5" ;
+                      ] .
+
+<kiteb_impf_1pl>   a morph:InflectionRule ;
+          morph:paradigm <kiteb_paradigm> ;
+          morph:involves <prefix_n_impf_1>, <suffix_u_impf_pl> ;
+          morph:replacement [
+                        a morph:Replacement ;
+                        morph:source "(C)(V)(C)(V)(C)" ;
+                        morph:target "ni\\1\\3\\5u" ;
+                      ] .
+
+<kiteb_impf_2pl>   a morph:InflectionRule ;
+          morph:paradigm <kiteb_paradigm> ;
+          morph:involves <prefix_t_impf_2>, <suffix_u_impf_pl> ;
+          morph:replacement [
+                        a morph:Replacement ;
+                        morph:source "(C)(V)(C)(V)(C)" ;
+                        morph:target "ti\\1\\3\\5u" ;
+                      ] .
+
+<kiteb_impf_3pl>   a morph:InflectionRule ;
+          morph:paradigm <kiteb_paradigm> ;
+          morph:involves <prefix_j_impf_3>, <suffix_u_impf_pl> ;
+          morph:replacement [
+                        a morph:Replacement ;
+                        morph:source "(C)(V)(C)(V)(C)" ;
+                        morph:target "ji\\1\\3\\5u" ;
+                      ] .
+
+<ghamel_perf_1sg>   a morph:InflectionRule ;
+          morph:paradigm <ghamel_paradigm> ;
+          morph:involves <suffix_t_perf_1sg> ;
+          morph:replacement [
+                        a morph:Replacement ;
+                        morph:source "(C)(V)(C)(V)(C)" ;
+                        morph:target "\\1\\2\\3i\\5t" ;
+                      ] .
+
+<ghamel_perf_2sg>   a morph:InflectionRule ;
+          morph:paradigm <ghamel_paradigm> ;
+          morph:involves <suffix_t_perf_2sg> ;
+          morph:replacement [
+                        a morph:Replacement ;
+                        morph:source "(C)(V)(C)(V)(C)" ;
+                        morph:target "\\1\\2\\3i\\5t" ;
+                      ] .
+
+<ghamel_perf_3sg_m>   a morph:InflectionRule ;
+          morph:paradigm <ghamel_paradigm> ;
+          morph:involves <affix_0_perf_3sg_m> ;
+          morph:replacement [
+                        a morph:Replacement ;
+                        morph:source "(C)(V)(C)(V)(C)" ;
+                        morph:target "\\0" ;
+                      ] .
+
+<ghamel_perf_3sg_f>   a morph:InflectionRule ;
+          morph:paradigm <ghamel_paradigm> ;
+          morph:involves <suffix_et_perf_3sg_f> ;
+          morph:replacement [
+                        a morph:Replacement ;
+                        morph:source "(C)(V)(C)(V)(C)" ;
+                        morph:target "\\1\\2\\3\\5et" ;
+                      ] .
+
+<ghamel_perf_1pl>   a morph:InflectionRule ;
+          morph:paradigm <ghamel_paradigm> ;
+          morph:involves <suffix_na_perf_1pl> ;
+          morph:replacement [
+                        a morph:Replacement ;
+                        morph:source "(C)(V)(C)(V)(C)" ;
+                        morph:target "\\1\\2\\3i\\5na" ;
+                      ] .
+
+<ghamel_perf_2pl>   a morph:InflectionRule ;
+          morph:paradigm <ghamel_paradigm> ;
+          morph:involves <suffix_tu_perf_2pl> ;
+          morph:replacement [
+                        a morph:Replacement ;
+                        morph:source "(C)(V)(C)(V)(C)" ;
+                        morph:target "\\1\\2\\3i\\5tu" ;
+                      ] .
+
+<ghamel_perf_3pl>   a morph:InflectionRule ;
+          morph:paradigm <ghamel_paradigm> ;
+          morph:involves <suffix_u_perf_3pl> ;
+          morph:replacement [
+                        a morph:Replacement ;
+                        morph:source "(C)(V)(C)(V)(C)" ;
+                        morph:target "\\1\\2\\3\\5u" ;
+                      ] .
+
+<ghamel_impf_1sg>   a morph:InflectionRule ;
+          morph:paradigm <ghamel_paradigm> ;
+          morph:involves <prefix_n_impf_1>, <affix_0_impf_sg> ;
+          morph:replacement [
+                        a morph:Replacement ;
+                        morph:source "(C)(V)(C)(V)(C)" ;
+                        morph:target "n\\0" ;
+                      ] .
+
+<ghamel_impf_2sg>   a morph:InflectionRule ;
+          morph:paradigm <ghamel_paradigm> ;
+          morph:involves <prefix_t_impf_2>, <affix_0_impf_sg> ;
+          morph:replacement [
+                        a morph:Replacement ;
+                        morph:source "(C)(V)(C)(V)(C)" ;
+                        morph:target "t\\0" ;
+                      ] .
+
+<ghamel_impf_3sg_m>   a morph:InflectionRule ;
+          morph:paradigm <ghamel_paradigm> ;
+          morph:involves <prefix_j_impf_3_m>, <affix_0_impf_sg> ;
+          morph:replacement [
+                        a morph:Replacement ;
+                        morph:source "(C)(V)(C)(V)(C)" ;
+                        morph:target "j\\0" ;
+                      ] .
+
+<ghamel_impf_3sg_f>   a morph:InflectionRule ;
+          morph:paradigm <ghamel_paradigm> ;
+          morph:involves <prefix_t_impf_3_f>, <affix_0_impf_sg> ;
+          morph:replacement [
+                        a morph:Replacement ;
+                        morph:source "(C)(V)(C)(V)(C)" ;
+                        morph:target "t\\0" ;
+                      ] .
+
+<ghamel_impf_1pl>   a morph:InflectionRule ;
+          morph:paradigm <ghamel_paradigm> ;
+          morph:involves <prefix_n_impf_1>, <suffix_u_impf_pl> ;
+          morph:replacement [
+                        a morph:Replacement ;
+                        morph:source "(C)(V)(C)(V)(C)" ;
+                        morph:target "n\\1\\2\\3\\5u" ;
+                      ] .
+
+<ghamel_impf_2pl>   a morph:InflectionRule ;
+          morph:paradigm <ghamel_paradigm> ;
+          morph:involves <prefix_t_impf_2>, <suffix_u_impf_pl> ;
+          morph:replacement [
+                        a morph:Replacement ;
+                        morph:source "(C)(V)(C)(V)(C)" ;
+                        morph:target "t\\1\\2\\3\\5u" ;
+                      ] .
+
+<ghamel_impf_3pl>   a morph:InflectionRule ;
+          morph:paradigm <ghamel_paradigm> ;
+          morph:involves <prefix_j_impf_3>, <suffix_u_impf_pl> ;
+          morph:replacement [
+                        a morph:Replacement ;
+                        morph:source "(C)(V)(C)(V)(C)" ;
+                        morph:target "j\\1\\2\\3\\5u" ;
+                      ] .
+
+<telaq_perf_1sg>   a morph:InflectionRule ;
+          morph:paradigm <telaq_paradigm> ;
+          morph:involves <suffix_t_perf_1sg> ;
+          morph:replacement [
+                        a morph:Replacement ;
+                        morph:source "(C)(V)(C)(V)(C)" ;
+                        morph:target "\\1\\3\\4\\5t" ;
+                      ] .
+
+<telaq_perf_2sg>   a morph:InflectionRule ;
+          morph:paradigm <telaq_paradigm> ;
+          morph:involves <suffix_t_perf_2sg> ;
+          morph:replacement [
+                        a morph:Replacement ;
+                        morph:source "(C)(V)(C)(V)(C)" ;
+                        morph:target "\\1\\3\\4\\5t" ;
+                      ] .
+
+<telaq_perf_3sg_m>   a morph:InflectionRule ;
+          morph:paradigm <telaq_paradigm> ;
+          morph:involves <affix_0_perf_3sg_m> ;
+          morph:replacement [
+                        a morph:Replacement ;
+                        morph:source "(C)(V)(C)(V)(C)" ;
+                        morph:target "\\0" ;
+                      ] .
+
+<telaq_perf_3sg_f>   a morph:InflectionRule ;
+          morph:paradigm <telaq_paradigm> ;
+          morph:involves <suffix_et_perf_3sg_f> ;
+          morph:replacement [
+                        a morph:Replacement ;
+                        morph:source "(C)(V)(C)(V)(C)" ;
+                        morph:target "\\1\\2\\3\\5et" ;
+                      ] .
+
+<telaq_perf_1pl>   a morph:InflectionRule ;
+          morph:paradigm <telaq_paradigm> ;
+          morph:involves <suffix_na_perf_1pl> ;
+          morph:replacement [
+                        a morph:Replacement ;
+                        morph:source "(C)(V)(C)(V)(C)" ;
+                        morph:target "\\1\\3\\4\\5na" ;
+                      ] .
+
+<telaq_perf_2pl>   a morph:InflectionRule ;
+          morph:paradigm <telaq_paradigm> ;
+          morph:involves <suffix_tu_perf_2pl> ;
+          morph:replacement [
+                        a morph:Replacement ;
+                        morph:source "(C)(V)(C)(V)(C)" ;
+                        morph:target "\\1\\3\\4\\5tu" ;
+                      ] .
+
+<telaq_perf_3pl>   a morph:InflectionRule ;
+          morph:paradigm <telaq_paradigm> ;
+          morph:involves <suffix_u_perf_3pl> ;
+          morph:replacement [
+                        a morph:Replacement ;
+                        morph:source "(C)(V)(C)(V)(C)" ;
+                        morph:target "\\1\\2\\3\\5u" ;
+                      ] .
+
+<telaq_impf_1sg>   a morph:InflectionRule ;
+          morph:paradigm <telaq_paradigm> ;
+          morph:involves <prefix_n_impf_1>, <affix_0_impf_sg> ;
+          morph:replacement [
+                        a morph:Replacement ;
+                        morph:source "(C)(V)(C)(V)(C)" ;
+                        morph:target "ni\\1\\3\\4\\5" ;
+                      ] .
+
+<telaq_impf_2sg>   a morph:InflectionRule ;
+          morph:paradigm <telaq_paradigm> ;
+          morph:involves <prefix_t_impf_2>, <affix_0_impf_sg> ;
+          morph:replacement [
+                        a morph:Replacement ;
+                        morph:source "(C)(V)(C)(V)(C)" ;
+                        morph:target "ti\\1\\3\\4\\5" ;
+                      ] .
+
+<telaq_impf_3sg_m>   a morph:InflectionRule ;
+          morph:paradigm <telaq_paradigm> ;
+          morph:involves <prefix_j_impf_3_m>, <affix_0_impf_sg> ;
+          morph:replacement [
+                        a morph:Replacement ;
+                        morph:source "(C)(V)(C)(V)(C)" ;
+                        morph:target "ji\\1\\3\\4\\5" ;
+                      ] .
+
+<telaq_impf_3sg_f>   a morph:InflectionRule ;
+          morph:paradigm <telaq_paradigm> ;
+          morph:involves <prefix_t_impf_3_f>, <affix_0_impf_sg> ;
+          morph:replacement [
+                        a morph:Replacement ;
+                        morph:source "(C)(V)(C)(V)(C)" ;
+                        morph:target "ti\\1\\3\\4\\5" ;
+                      ] .
+
+<telaq_impf_1pl>   a morph:InflectionRule ;
+          morph:paradigm <telaq_paradigm> ;
+          morph:involves <prefix_n_impf_1>, <suffix_u_impf_pl> ;
+          morph:replacement [
+                        a morph:Replacement ;
+                        morph:source "(C)(V)(C)(V)(C)" ;
+                        morph:target "ni\\1i\\3\\5u" ;
+                      ] .
+
+<telaq_impf_2pl>   a morph:InflectionRule ;
+          morph:paradigm <telaq_paradigm> ;
+          morph:involves <prefix_t_impf_2>, <suffix_u_impf_pl> ;
+          morph:replacement [
+                        a morph:Replacement ;
+                        morph:source "(C)(V)(C)(V)(C)" ;
+                        morph:target "ti\\1i\\3\\5u" ;
+                      ] .
+
+<telaq_impf_3pl>   a morph:InflectionRule ;
+          morph:paradigm <telaq_paradigm> ;
+          morph:involves <prefix_j_impf_3>, <suffix_u_impf_pl> ;
+          morph:replacement [
+                        a morph:Replacement ;
+                        morph:source "(C)(V)(C)(V)(C)" ;
+                        morph:target "ji\\1i\\3\\5u" ;
+                      ] .
