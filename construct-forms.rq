@@ -2,7 +2,7 @@ PREFIX ontolex: <http://www.w3.org/ns/lemon/ontolex#>
 PREFIX morph: <https://www.w3.org/community/ontolex/wiki/Morphology#>
 PREFIX entries: <https://mlrs.research.um.edu.mt/resources/gabra/lexemes/view/>
 PREFIX lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#>
-PREFIX gabra: <https://apps.ionov.me/gabra/>
+PREFIX gabra: <https://data.ionov.me/gabra/>
 
 CONSTRUCT
 {
@@ -13,8 +13,6 @@ CONSTRUCT
 }
 WHERE
 {
-  GRAPH <https://mlrs.research.um.edu.mt/resources/gabra/>
-  {
     ?word morph:morphologicalPattern ?paradigm ;
           morph:baseForm ?baseForm ;
           morph:baseForm/ontolex:writtenRep ?baseString .
@@ -37,5 +35,4 @@ WHERE
     BIND(REPLACE(?baseString, ?srcPattern_repl, ?dstPattern_repl) AS ?newString)
     
     BIND(URI(CONCAT(STR(?form), "_gram")) AS ?gramMeaning)
-  }
 }
